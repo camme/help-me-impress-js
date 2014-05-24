@@ -1,0 +1,48 @@
+{
+  "name": "help-me-impress-js",
+  "version": "0.0.1",
+  "description": "A presentor screen helper for impress.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/camme/help-me-impress.git"
+  },
+  "keywords": [
+    "impress",
+    "presentation"
+  ],
+  "author": "Camilo Tapia <camilo.tapia@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "stylus": "~0.37.0",
+    "everyauth": "~0.4.5",
+    "nunt": "~1.5.5",
+    "user-data": "0.0.1",
+    "googleapis": "~0.4.5",
+    "passport": "~0.1.17",
+    "passport-oauth": "~1.0.0",
+    "mongoose": "~3.8.1",
+    "grunt": "~0.4.2",
+    "grunt-cli": "~0.1.11",
+    "passport-google-oauth": "~0.1.5",
+    "socket.io": "~0.9.16",
+    "sessionstore": "~0.2.5",
+    "session.io": "~1.0.0",
+    "connect": "~2.11.2",
+    "session.socket.io": "~0.1.6",
+    "express-dot": "^0.1.0",
+    "express": "^4.3.0",
+    "cookie-parser": "^1.1.0",
+    "express-session": "^1.2.0",
+    "request": "^2.36.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "^0.6.1",
+    "autoprefixer-stylus": "^0.1.0",
+    "stylus": "^0.37.0",
+    "autoprefixer": "^1.1.20140523"
+  }
+}

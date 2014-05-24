@@ -1,0 +1,206 @@
+html {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+}
+body {
+  height: 100%;
+  font-family: helvetica, sans-serif;
+  margin: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #333;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.bottom {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.right {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-left: 0.6rem;
+}
+.left {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 0.6rem;
+}
+.top {
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+h1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  color: #eee;
+}
+.clock {
+  color: #bbb;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.clock .hours,
+.clock .minutes,
+.clock .seconds {
+  font-size: 2rem;
+  width: 3rem;
+}
+.clock .hours:after,
+.clock .minutes:after {
+  content: ':';
+}
+.clock button {
+  margin-left: 1rem;
+  border-radius: 5px;
+  background-color: #ffa500;
+  border: 0 solid #ffa500;
+  font-size: 0.7rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  -webkit-transition: all 0.5s ec ease-out;
+  transition: all 0.5s ec ease-out;
+  font-weight: bold;
+  cursor: pointer;
+}
+.clock button:focus {
+  outline: 0;
+}
+.clock button:hover {
+  background-color: #999;
+}
+.bottom {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.embed-code {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 0.5rem;
+  border: 1px dashed #666;
+  margin-bottom: 1rem;
+  background-color: #333;
+}
+iframe {
+  border: 1px solid #666;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+#preview-current {
+  margin-bottom: 0.5rem;
+}
+.preview-header,
+#comment-header {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  font-weight: normal;
+  text-transform: lowercase;
+  text-align: center;
+  color: #aaa;
+  padding-bottom: 0.2rem;
+}
+textarea {
+  background-color: #333;
+  color: #eee;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #666;
+  font-size: 1.5em;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  resize: none;
+}
+textarea:focus {
+  outline: 0;
+}

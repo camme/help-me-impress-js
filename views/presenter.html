@@ -1,0 +1,34 @@
+
+<div class="top">
+    <h1>Waiting for the title...</h1>
+    <div class="clock">
+        <div class="hours">00</div>
+        <div class="minutes">00</div>
+        <div class="seconds">00</div>
+        <button class="reset-clock">reset clock</button>
+    </div>
+    <div class="saving"></div>
+</div>
+
+<input class="embed-code" readonly="true" value='{{=it.embed}}' />
+
+<div class="bottom">
+    <div class="left">
+        <div id="comment-header">Comments for <span id="step-id">#</span></div>
+        <textarea id="comments"></textarea>
+    </div>
+    <div class="right">
+        <h2 class="preview-header">Current</h2>
+        <iframe id="preview-current"></iframe>
+        <h2 class="preview-header">Next</h2>
+        <iframe id="preview-next"></iframe>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var HMIJS = { page: "presenter", guid: '{{= it.guid }}' }; 
+</script>
+
+
+
+
