@@ -1,8 +1,0 @@
-{
-  "volo": {
-    "dependencies": {
-      "require-css": "github:guybedford/require-css/0.0.8",
-      "require-is": "github:guybedford/require-is/0.0.1"
-    }
-  }
-}
