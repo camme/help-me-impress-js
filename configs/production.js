@@ -1,4 +1,4 @@
-var secrets = require('./production-secrets');
+var secrets = require('./configs/production-secrets');
 
 exports.server = {
     port: 8888,
