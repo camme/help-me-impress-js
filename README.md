@@ -1,4 +1,7 @@
-impressionist
+Help me impress (js)
 =============
 
-Aa live markdown-ish editor for impressjs
+If you love impress.js but miss a presenter screen, then this is for you.
+
+Use it here http://help-me-impress.1001.io/
+
