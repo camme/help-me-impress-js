@@ -87,6 +87,32 @@ module.exports = function(grunt) {
 
     });
 
-grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadTasks("grunttasks");
+
+    grunt.registerTask('build', function(inputTarget) {
+        var inputTarget = inputTarget || 'development';
+
+        var target = "";
+        if (inputTarget == "production") {
+            target = "production";
+        } else if (inputTarget == "development") {
+            target = "development";
+        } else if (inputTarget == "local") {
+            target = "local";
+        } else {
+            grunt.log.error("Config settings is not accepeted, use production or development");
+            return false;
+        }
+
+        var targetTasks = ['setconfig'];
+        var tasks = ['stylus', 'version'];
+        targetTasks = targetTasks.map(function(task) {
+            return task + ":" + target;
+        });
+        tasks = targetTasks.concat(tasks);
+        grunt.task.run.apply(grunt.task, tasks);
+    });
+
 
 }

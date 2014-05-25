@@ -19,3 +19,4 @@ npm-debug.log
 node_modules
 config.js
 *-secrets.js
+version.txt
