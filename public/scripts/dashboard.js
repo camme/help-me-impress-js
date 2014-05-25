@@ -11,7 +11,7 @@ define(function(require) {
 
         var buttonCreate = document.getElementById("button-create");
         buttonCreate.addEventListener("click", function() {
-            socket.emit("presenter.create", { name: "Foo" });
+            socket.emit("presenter.create");
         });
 
     });

@@ -251,10 +251,10 @@ textarea:focus {
   display: -ms-flexbox;
   display: flex;
   line-height: 3rem;
-  background-color: #2ecc71;
   text-align: center;
   color: #fff;
   cursor: pointer;
+  background-color: #2ecc71;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -276,7 +276,7 @@ textarea:focus {
   display: flex;
   padding: 3rem;
   line-height: 3rem;
-  background-color: #2ecc71;
+  background-color: #1abc9c;
   text-align: center;
   color: #fff;
   cursor: pointer;
