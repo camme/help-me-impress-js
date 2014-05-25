@@ -1,14 +1,11 @@
-var mongoose = require('mongoose');
+var secrets = require('./development-secrets');
 
 exports.server = {
     port: 8888,
     url: "http://help-me-impress.local.io"
 };
 
-exports.google = {
-    key: '653987556439-dc470l33j4kcbhbunm6s6904nd1kukuf.apps.googleusercontent.com',
-    secret: 'LK3XY6owHSsJ_iD2xnucc72t'
-};
+exports.google = secrets.google;
 
 exports.mongodb = 'mongodb://localhost/help-me-impress-development';
 

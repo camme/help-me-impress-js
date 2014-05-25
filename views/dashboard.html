@@ -1,0 +1,23 @@
+
+    <div id="main-container">
+        <div>{{= it.user.email }} </div>
+        <button id="button-create">Create presentation screen</button>
+        <ul class="list">
+
+            {{~it.list :item:index}}
+                <li>
+                    <a href="/presenter/{{=item.slug}}/">{{=item.name}}</a>
+                    <input class="embed-code" readonly="true" value='{{=item.embed}}' />
+                </li>
+            {{~}}
+
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        var HMIJS = { page: "dashboard" }; 
+    </script>
+
+
+
+
