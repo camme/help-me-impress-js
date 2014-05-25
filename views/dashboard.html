@@ -1,22 +1,26 @@
 
-    <div id="main-container">
-        <div>{{= it.user.email }} </div>
-        <button id="button-create">Create presentation screen</button>
+<h1 class="title">help me impress (js)</h1>
+
+<div id="main-container" class="dashboard">
+    <div class="part-create">
+        <div id="button-create">create new presenter screen</div>
+    </div>
+    <div class="part-or">or</div>
+    <div class="part-list">
+        <p>Choose one of your previous presentations:</p>
         <ul class="list">
 
             {{~it.list :item:index}}
-                <li>
-                    <a href="/presenter/{{=item.slug}}/">{{=item.name}}</a>
-                    <input class="embed-code" readonly="true" value='{{=item.embed}}' />
-                </li>
+                <li><a href="/dashboard/{{=item.guid}}/">{{=item.title}}</a></li>
             {{~}}
 
         </ul>
     </div>
+</div>
 
-    <script type="text/javascript">
-        var HMIJS = { page: "dashboard" }; 
-    </script>
+<script type="text/javascript">
+var HMIJS = { page: "dashboard" }; 
+</script>
 
 
 

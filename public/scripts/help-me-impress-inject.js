@@ -11,14 +11,25 @@
         scriptId = "next";
     }
 
-
-
     socket.on('connect', function(){
 
         socket.emit('impress.loaded', { scriptId: scriptId, url: location.href, guid: guid, title: document.title });
 
         if (scriptId == "impress") {
+
             bindPresentation();
+
+
+            socket.on("impress.control.prev", function(e) {
+                var api = impress();
+                api.prev();
+            });
+
+            socket.on("impress.control.next", function(e) {
+                var api = impress();
+                api.next();
+            });
+
         }
 
         if (scriptId == "next") {

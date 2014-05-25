@@ -9,16 +9,24 @@ html
 body
     height 100%
     font-family helvetica, sans-serif
-    margin 2rem
     display flex
     box-sizing border-box
     background-color #333
     flex 1
+    margin 0
+    padding 0
+    flex-direction column
+
+footer
+    padding .5rem 1rem
+    background-color #444
 
 .main
+    margin 1rem
     display flex
     flex-direction column
     flex 1
+    font-family lato
 
 .bottom
     display flex
@@ -32,7 +40,7 @@ body
     margin-left .6rem
 
 .left
-    flex 1
+    flex 1.5
     flex-direction column
     display flex
     margin-right .6rem
@@ -41,13 +49,29 @@ body
     margin-bottom 1rem
     display flex
 
-h1
-    flex 1
-    margin 0
-    padding 0
-    color #eee
+h1.title
+    flex 0
+    font-size 3rem
+    text-align center
+    color #27AE60
+    &:before
+        content '\\/\\/\\/\\/\\'
+        letter-spacing -.1rem
+        padding-right 1rem
+        font-size 2.0rem
+        padding-top 1.3rem
+        opacity .5
+    &:after
+        content '/\\/\\/\\/\\/'
+        padding-left 1rem
+        letter-spacing -.1rem
+        font-size 2.0rem
+        padding-top 1.3rem
+        opacity .5
+ 
 
 .clock
+    padding-top .4rem
     color #bbb
     display flex
     .hours, .minutes, .seconds
@@ -77,15 +101,19 @@ h1
 .embed-code
     width 100%
     box-sizing border-box
-    font-size 1.2rem
+    font-weight normal
+    font-size 0.8rem
+    line-height 1.2rem
     color #666
     padding .5rem
-    border 1px dashed #666
+    border 1px dashed rgba(50, 50, 50, .3);
     margin-bottom 1rem
-    background-color #333
+    background-color rgba(0,0,0,0) 
 
 iframe
-    border 1px solid borderColor
+    border 0px solid borderColor
+    outline 0
+    background-color #444
     flex 1
 
 #preview-current
@@ -102,18 +130,134 @@ iframe
     padding-bottom .2rem
 
 textarea
-    background-color #333
+    background-color #444
     color #eee
     flex 1
     padding 0
     margin 0
     font-weight bold
     line-height 2rem
-    margin-bottom .5rem
-    border 1px solid borderColor
+    border 0px solid rgba(255, 255, 255, .1)
+    outline 0
     font-size 1.5em
     padding 1rem
     box-sizing border-box
     resize none
     &:focus
         outline 0
+
+.modal-dialog
+    display none
+
+#button-create
+    border-radius 1000px
+    width 18rem;
+    height 18rem;
+    padding 2rem
+    font-size 3rem
+    display flex
+    line-height 3rem
+    background-color #2ECC71
+    text-align center
+    color white
+    cursor pointer
+    justify-content center
+    align-items center
+    font-family lato
+
+#button-login
+    border-radius 1000px
+    width 20rem;
+    height 20rem;
+    font-size 3rem
+    display flex
+    padding 3rem
+    line-height 3rem
+    background-color #2ECC71
+    text-align center
+    color white
+    cursor pointer
+    justify-content center
+    align-items center
+    font-family lato
+
+
+
+
+#main-container
+    flex 1
+    display flex
+    flex-direction column
+
+#main-container.presenter
+    h1
+        color rgba(255, 255, 255, .5)
+        flex 1
+        margin 0
+        padding 0
+        color #eee
+
+#main-container.index
+    justify-content center
+    display flex
+    flex 1
+    flex-direction row
+    align-items center
+
+
+#main-container.dashboard
+    justify-content center
+    display flex
+    flex 1
+    flex-direction row
+    align-items center
+
+    .part-or
+        padding 5rem
+        font-size 4rem
+        color #2ECC71
+        font-family lato
+
+    .part-list
+        width 20rem
+        p
+            font-family lato
+            font-size 1.6rem
+            line-height 1.9rem
+            font-weight 200
+            color rgba(255,255,255, 0.5)
+        ul
+            margin-left 0
+            padding-left 1.2rem
+
+.btn-group            
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;            
+
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) 
+    border-radius: 0;
+
+.btn-group > .btn + .btn 
+    margin-left 0
+    
+.btn-group > .btn, .btn-group-vertical > .btn 
+    position: relative;
+    float: left;
+
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) 
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) 
+    border-radius: 0;
+
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) 
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+.nav
+    margin-left 1rem
+    margin-top .7rem
+    div
+        cursor pointer

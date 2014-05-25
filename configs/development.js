@@ -1,4 +1,4 @@
-var secrets = require('./development-secrets');
+var secrets = require('./configs/development-secrets');
 
 exports.server = {
     port: 8888,

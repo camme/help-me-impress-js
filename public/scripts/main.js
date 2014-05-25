@@ -1,12 +1,7 @@
 define(function(require) {
 
-    var domReady = require('lib/domready');
-    var socket = require('socket');
-
-    if (HMIJS.page != "") {
-
+    if (window.HMIJS && HMIJS.page != "") {
         require([HMIJS.page], function() { });
-
     }
 
 });

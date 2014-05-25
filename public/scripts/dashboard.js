@@ -16,8 +16,8 @@ define(function(require) {
 
     });
 
-    socket.on('connect', function() {
-        //console.log("connected");
+    socket.on('presenter.created', function(e) {
+        location.href = "/dashboard/" + e.guid;
     });
 
 });

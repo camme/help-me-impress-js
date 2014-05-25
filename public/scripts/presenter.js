@@ -6,13 +6,17 @@ define(function(require) {
 
     var domReady = require('lib/domready');
     var socket = require('socket');
+    var modal = require('modal');
     var next;
     var current;
     var hoursDom;
     var minutesDom;
     var secondsDom;
     var commentInput;
+    var embedModal;
+    var connectWarningModal;
     var saveTimeout = -1;
+    var showConnectWarningTimeout = -1;
 
     var currentStep = "";
 
@@ -27,12 +31,28 @@ define(function(require) {
         hoursDom = document.querySelector(".hours");
         minutesDom = document.querySelector(".minutes");
         secondsDom = document.querySelector(".seconds");
+        embedModal = modal(document.querySelector("#embed-modal"));
+        connectWarningModal = modal(document.querySelector("#connect-warning-modal"));
 
-        setInterval(clock, 900);
+        // If impress hasnt be connected to the presneter screen yet, we show the embed code
+        if (!HMIJS.connected) {
+            embedModal.show();
+        } else {
 
+            // We set a timer to make sure we show a waring if we dont get a connection to the impress presentation
+            showConnectWarningTimeout = setTimeout(showConnectWarning, 1000);
+
+        }
+
+        // Bind the button to reset the clock
         document.querySelector(".reset-clock").addEventListener("click", function(e) {
             start = new Date();
             clock();
+        }, false);
+
+        // If the input with the embed code is clicked, make sure we mark all
+        document.querySelector(".embed-code").addEventListener("click", function(e) {
+            this.select();
         }, false);
 
         next.addEventListener("click", function(e) {
@@ -43,6 +63,7 @@ define(function(require) {
             this.blur();
         }, false);
 
+        // Save on keyup
         commentInput.addEventListener("keyup", function(e) {
 
             if (currentStep == "") {
@@ -66,17 +87,32 @@ define(function(require) {
 
     });
 
+
+    // When we connect to the socker, we tell it that we are the presenter socket
     socket.on('connect', function() {
         socket.emit("presenter.connect", { guid: HMIJS.guid });
     });
 
+
+    // The impress presentation has changed so we make sure we save the current step
     socket.on("impress.step", function(e) {
         currentStep = e.id;
     });
 
+
     socket.on("presenter.comments", showComments);
 
+
     socket.on('impress.loaded', function(e) {
+
+        clearTimeout(showConnectWarningTimeout);
+        connectWarningModal.hide();
+
+        // Hide all modals now that we know that the impress is connected
+        embedModal.hide();
+        connectWarningModal.hide();
+
+        setInterval(clock, 900);
 
         var step = e.url.substring(e.url.indexOf("/#"));
         if (step) {
@@ -84,13 +120,22 @@ define(function(require) {
             currentStep = step.replace(/\/#\//g, '');
         }
 
-            var url = e.url + "?helpmeimpressjsid=current" + step;
-            current.setAttribute("src", url);
+        var url = e.url + "?helpmeimpressjsid=current" + step;
+        current.setAttribute("src", url);
 
-            var url = e.url + "?helpmeimpressjsid=next" + step;
-            next.setAttribute("src", url);
+        var url = e.url + "?helpmeimpressjsid=next" + step;
+        next.setAttribute("src", url);
 
-            document.querySelector("h1").innerHTML = e.title;
+        document.querySelector("h1").innerHTML = e.title;
+
+        // bind controls
+        document.querySelector("#button-next").addEventListener("click", function() {
+            socket.emit("presenter.control.next");
+        }, false); 
+
+        document.querySelector("#button-prev").addEventListener("click", function() {
+            socket.emit("presenter.control.prev");
+        }, false); 
 
     });
 
@@ -117,6 +162,10 @@ define(function(require) {
         minutesDom.innerHTML = m;
         secondsDom.innerHTML = s;
 
+    }
+
+    function showConnectWarning() {
+        connectWarningModal.show();
     }
 
 });
